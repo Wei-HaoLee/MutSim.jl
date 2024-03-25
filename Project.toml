@@ -1,0 +1,13 @@
+name = "MutSim"
+uuid = "5295895d-a4d2-414e-b3ce-5ca3b7e234df"
+authors = ["Wei-Hao Lee <steve24563@gmail.com> and contributors"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.9.4"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
