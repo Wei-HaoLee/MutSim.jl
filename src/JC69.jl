@@ -48,5 +48,5 @@ function mut_simulation(model::JC69, seq::String; verbose=false)
         println("Total mutations: $total_mutations\n")
     end
 
-    seq_mut_results(pos, refs, vars)
+    seq_mut_results(pos, refs, vars, total_mutations)
 end

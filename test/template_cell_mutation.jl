@@ -2,9 +2,17 @@ using MutSim
 
 path = "data/sequence.fa"
 records = read_fa(path)
-sequences = get_seq(records)
-seq = sequences[1]
 
+
+# single cell mutations
 model = create_JC69(α=1e-5)
-foreach(x -> mut_simulation(model, x), sequences)
-res = mut_simulation(model, seq)
+variant = cell_mutation(model, records)
+print_num_mut_per_gene(variant)
+
+# second n_generation cell mutations
+second_variant = cell_mutation(model, records, variant)
+print_num_mut_per_gene(second_variant)
+
+
+# cell generation mutation
+sim_cell_mut_branching(model, records, 2)
