@@ -1,5 +1,6 @@
 using MutSim
 
+# read fasta file
 path = "data/sequence.fa"
 records = read_fa(path)
 
@@ -15,4 +16,5 @@ print_num_mut_per_gene(second_variant)
 
 
 # cell generation mutation
-sim_cell_mut_branching(model, records, 2)
+cell_population = sim_cell_mut_branching(model, records, 5)
+print_num_mut_per_gene(cell_population["0a493624-eb37-11ee-2aec-cd2fbb170f40"].variant)

@@ -8,7 +8,7 @@ function cell_mutation(model::Union{JC69},
        sequences_mutations[seq_header] = seq_mut_results(Vector{Integer}(), Vector{String}(), Vector{String}(), 0)
     end
 
-    sequences_mutations
+    return sequences_mutations
 end
 
 function seq_modify(seq::String, variant::seq_mut_results)
@@ -23,7 +23,7 @@ function seq_modify(seq::String, variant::seq_mut_results)
         seq_mut[pos] = collect(var)[1]
     end
 
-    join(seq_mut)
+    return join(seq_mut)
 end
 
 function cell_mutation(model::Union{JC69}, 
@@ -46,7 +46,7 @@ function cell_mutation(model::Union{JC69},
         sequences_mutations[seq_header] = total_variant
     end
 
-    sequences_mutations
+    return sequences_mutations
 end
 
 function print_num_mut_per_gene(variant::Dict{String, seq_mut_results})
