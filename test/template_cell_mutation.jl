@@ -17,4 +17,4 @@ print_num_mut_per_gene(second_variant)
 
 # cell generation mutation
 cell_population = sim_cell_mut_branching(model, records, 5)
-print_num_mut_per_gene(cell_population["0a493624-eb37-11ee-2aec-cd2fbb170f40"].variant)
+print_num_mut_per_gene(cell_population["edc67ade-ebb1-11ee-1ab7-a92fc6c6c452"].variant)

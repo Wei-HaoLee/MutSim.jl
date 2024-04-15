@@ -3,7 +3,7 @@ function cell_mutation(model::Union{JC69},
 
     sequences_mutations = Dict{String, seq_mut_results}()
     for s in sequences
-       seq_header =  description(s)
+       seq_header =  identifier(s)
 
        sequences_mutations[seq_header] = seq_mut_results(Vector{Integer}(), Vector{String}(), Vector{String}(), 0)
     end
@@ -32,7 +32,7 @@ function cell_mutation(model::Union{JC69},
     
     sequences_mutations = Dict{String, seq_mut_results}()
     for s in sequences
-        seq_header =  description(s)
+        seq_header =  identifier(s)
         seq = sequence(String, s)
         seq_mut = seq_modify(seq, variant[seq_header])
 
