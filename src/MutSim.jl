@@ -26,5 +26,8 @@ export
     sim_cell_mut_branching,
     simulate,
     create_animation,
-    simulate_dna_mutations
+    simulate_dna_mutations,
+    get_mutation_frequency,
+    simulate_continue,
+    simulate_cancer
 end
