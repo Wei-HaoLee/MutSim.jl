@@ -34,7 +34,7 @@ function apply_rules(grid, mutation_profiles, normal_mutation_rate, cancer_mutat
     new_grid = copy(grid)  # Create a new grid to avoid modifying the grid in place
 
     # Process the grid in a single pass
-    for x in 1:grid_size, y in 1:grid_size
+    for x in shuffle(collect(1:grid_size)), y in shuffle(collect(1:grid_size))
         
         cell_type = grid[x, y]
         cell_index = (x-1) * grid_size + y
@@ -67,7 +67,7 @@ function apply_rules(grid, mutation_profiles, normal_mutation_rate, cancer_mutat
                 mutation_profiles[(nx-1) * grid_size + ny] = copy(mutation_profiles[cell_index])
 
             elseif rand() < takeover_probability
-                normal_neighbors = find_neighbors(grid, x, y, v -> v == 1)
+                normal_neighbors = find_neighbors(grid, x, y, v -> v == 1 || v == 2)
                 if !isempty(normal_neighbors)
                     nx, ny = random_choice(normal_neighbors)
                     new_grid[nx, ny] = 2
